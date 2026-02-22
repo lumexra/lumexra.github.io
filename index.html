@@ -10,12 +10,25 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  background: black; /* 余白部分の色（任意） */
 }
 
-/* 背景画像 */
-body {
-  background: url("IMG_3973.PNG") no-repeat center center fixed;
-  background-size: cover;
+/* 画像を画面中央に配置 */
+#imageContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 縦が見切れない表示 */
+#bgImage {
+  height: 100vh;      /* 画面の高さに合わせる */
+  width: auto;        /* 横は自動 */
 }
 
 /* 透明リンク（全画面） */
@@ -64,6 +77,11 @@ body {
 </head>
 
 <body>
+
+<!-- 画像表示 -->
+<div id="imageContainer">
+  <img id="bgImage" src="IMG_3973.PNG">
+</div>
 
 <!-- 透明リンク -->
 <div id="tapArea"></div>
